@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>白敬俊 · AI 应用工程作品集</title>
+<meta name="description" content="白敬俊的 AI 应用工程作品集：5 个 GitHub 公开仓库，覆盖检索引擎、Agent 编排、模型微调与量化、推理服务化，全部附带评测数据与复现路径。">
+<meta name="author" content="白敬俊">
+<meta name="theme-color" content="#0B0B0D">
+<link rel="canonical" href="https://jubai123.github.io/">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:title" content="白敬俊 · AI 应用工程作品集">
+<meta property="og:description" content="5 个公开仓库：检索增强、Agent 编排、模型微调与量化、推理服务化。全部带评测数据与复现路径。">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%230B0B0D'/%3E%3Crect x='6' y='6' width='52' height='52' fill='none' stroke='%23F0522B' stroke-width='2'/%3E%3Ctext x='32' y='40' font-family='monospace' font-size='22' font-weight='600' fill='%23F2EEE6' text-anchor='middle'%3EJB%3C/text%3E%3C/svg%3E">
+<link rel="preload" href="assets/fonts/space-grotesk-latin-600.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/jetbrains-mono-latin-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/css/style.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "白敬俊",
+  "alternateName": "Jingjun Bai",
+  "url": "https://jubai123.github.io/",
+  "email": "baijingjun@stu.xjtu.edu.cn",
+  "jobTitle": "AI 应用工程师",
+  "sameAs": ["https://github.com/jubai123"]
+}
+</script>
+</head>
+<body>
+<a class="skip" href="#main">跳到正文</a>
+<noscript>
+  <style>
+    /* 无 JavaScript 时展开全部项目，保证内容可读 */
+    .project-body { grid-template-rows: 1fr !important; }
+    .p-toggle { display: none; }
+  </style>
+</noscript>
+
+<header class="nav">
+  <div class="wrap nav-inner">
+    <a class="brand" href="#top" aria-label="回到顶部">
+      <span class="monogram" aria-hidden="true">JB</span>
+      <span class="brand-name">白敬俊</span>
+    </a>
+    <nav class="nav-links" aria-label="主导航">
+      <a href="#work">作品</a>
+      <a href="#method">方法</a>
+      <a href="#case">案例</a>
+      <a href="#about">关于</a>
+    </nav>
+    <a class="nav-gh" href="https://github.com/jubai123" target="_blank" rel="noopener noreferrer">
+      GitHub <span aria-hidden="true">↗</span>
+    </a>
+  </div>
+</header>
+
+<main id="main">
+  <section class="hero" id="top">
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <p class="eyebrow" data-reveal>
+          <span class="eyebrow-mark" aria-hidden="true"></span>
+          AI 应用工程 / 检索 · Agent · 推理部署
+        </p>
+        <h1 data-reveal style="--d:.06s">
+          把大模型做成<br>
+          能评测、<span class="accent">能上线</span>的系统
+        </h1>
+        <p class="hero-sub" data-reveal style="--d:.12s">
+          5 个公开仓库，全部围绕检索增强、Agent 编排与推理服务，每个都带可核对的数字与复现路径。
+        </p>
+        <div class="hero-actions" data-reveal style="--d:.18s">
+          <a class="btn btn--primary" href="#work">查看作品 <span aria-hidden="true">→</span></a>
+          <a class="btn btn--ghost" href="https://github.com/jubai123" target="_blank" rel="noopener noreferrer">GitHub 仓库 <span aria-hidden="true">↗</span></a>
+        </div>
+      </div>
+
+      <aside class="index-panel" aria-label="公开仓库索引" data-reveal style="--d:.1s">
+        <div class="index-head">
+          <span>公开仓库索引</span>
+          <span>05 / 2026</span>
+        </div>
+        <a class="index-row" href="#p-erp" data-jump="p-erp">
+          <span class="i">01</span>
+          <span class="n">erp-agent-copilot</span>
+          <span class="m">246</span>
+        </a>
+        <a class="index-row" href="#p-rag" data-jump="p-rag">
+          <span class="i">02</span>
+          <span class="n">Enterprise-RAG-System</span>
+          <span class="m">6 层</span>
+        </a>
+        <a class="index-row" href="#p-ec" data-jump="p-ec">
+          <span class="i">03</span>
+          <span class="n">ecommerce-customer-service</span>
+          <span class="m">89.5%</span>
+        </a>
+        <a class="index-row" href="#p-dr" data-jump="p-dr">
+          <span class="i">04</span>
+          <span class="n">LangGraph-DeepResearch</span>
+          <span class="m">5 维</span>
+        </a>
+        <a class="index-row" href="#p-ocr" data-jump="p-ocr">
+          <span class="i">05</span>
+          <span class="n">invoice-ocr-automation</span>
+          <span class="m">3 级</span>
+        </a>
+        <div class="index-foot">
+          <div class="cell"><b>5</b><span>公开仓库</span></div>
+          <div class="cell"><b>96.9%</b><span>Python</span></div>
+          <div class="cell"><b>252</b><span>提交</span></div>
+          <div class="cell"><b>3.0</b><span>MB 代码</span></div>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <section class="section" id="work">
+    <div class="wrap">
+      <header class="section-head">
+        <h2 data-reveal>作品</h2>
+        <p class="lead" data-reveal style="--d:.05s">
+          按体量排序。每个仓库都写了怎么跑、怎么评，以及哪些结论被数据推翻过。
+        </p>
+        <p class="note" data-reveal style="--d:.1s">
+          下列 5 个均为 GitHub 公开仓库，私有仓库不在此展示。
+        </p>
+      </header>
+
+      <ol class="projects" data-reveal>
+        <li class="project" id="p-erp" data-project data-open="true">
+          <button class="project-head" type="button" aria-expanded="true" aria-controls="body-erp">
+            <span class="p-idx">01</span>
+            <span class="p-main">
+              <span class="p-title">ERP Agent Copilot</span>
+              <span class="p-sub">把自然语言 ERP 需求编译成可审批、可恢复的跨系统工具调用 DAG</span>
+            </span>
+            <span class="p-meta">Python · LangGraph</span>
+            <span class="p-metric"><b>246</b>提交</span>
+            <span class="p-toggle" aria-hidden="true"></span>
+          </button>
+          <div class="project-body" id="body-erp" role="region" aria-label="ERP Agent Copilot 详情">
+            <div class="project-inner">
+              <div class="p-cols">
+                <div class="p-block">
+                  <h4>问题</h4>
+                  <p>ERP 操作横跨订单、库存与财务，让模型直接调工具，一次越权就可能改错账。</p>
+                  <h4>做法</h4>
+                  <ul>
+                    <li>LangGraph 强类型状态机串联 plan → validate → policy → executor → verify，每个 Run 绑定数据库检查点，中断后可从断点恢复。</li>
+                    <li>五层防护：权限策略、工具白名单、审批门、审计日志、安全守卫评测集。</li>
+                    <li>MCP Gateway 暴露外部系统能力，四个应用进程加 Postgres、Redis、Prometheus、Grafana 由一份 compose 编排。</li>
+                  </ul>
+                </div>
+                <div class="p-block">
+                  <h4>结果</h4>
+                  <ul class="results">
+                    <li><b>1562</b> 个测试通过，mypy 检查 <b>103</b> 个文件无报错</li>
+                    <li><b>175</b> 条五分类评测，另有 25 条安全守卫与 42 条检索消融</li>
+                    <li><b>8</b> 个服务一键启动，<b>246</b> 次提交</li>
+                  </ul>
+                </div>
+                <div class="p-block">
+                  <h4>技术栈</h4>
+                  <ul class="stack">
+                    <li>FastAPI · Pydantic v2</li>
+                    <li>LangGraph · Celery</li>
+                    <li>PostgreSQL · pgvector</li>
+                    <li>MCP SDK · OpenTelemetry</li>
+                  </ul>
+                  <a class="repo-link" href="https://github.com/jubai123/erp-agent-copilot" target="_blank" rel="noopener noreferrer">在 GitHub 查看 <span aria-hidden="true">↗</span></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <li class="project" id="p-rag" data-project>
+          <button class="project-head" type="button" aria-expanded="false" aria-controls="body-rag">
+            <span class="p-idx">02</span>
+            <span class="p-main">
+              <span class="p-title">Enterprise RAG System</span>
+              <span class="p-sub">混合检索加 Cross Encoder 重排，用可复现的评测决定默认配置</span>
+            </span>
+            <span class="p-meta">Python · Qdrant</span>
+            <span class="p-metric"><b>6</b>层否决</span>
+            <span class="p-toggle" aria-hidden="true"></span>
+          </button>
+          <div class="project-body" id="body-rag" role="region" aria-label="Enterprise RAG System 详情">
+            <div class="project-inner">
+              <div class="p-cols">
+                <div class="p-block">
+                  <h4>问题</h4>
+                  <p>企业文档里既有结构化表格也有长段落，单路向量检索召回不稳，答案还容易编造标识符。</p>
+                  <h4>做法</h4>
+                  <ul>
+                    <li>Dense 与 BM25 双通道召回，RRF 融合后由 Cross Encoder 对候选逐一打分，再展开父块控制上下文宽度。</li>
+                    <li>检索计划按意图拆分子查询并分配预算，规划、检索、重排的选择过程全程留痕。</li>
+                    <li>反捏造契约：Prompt 侧校验加输出侧标识符核查，模型不许引用检索结果里没有的编号。</li>
+                  </ul>
+                </div>
+                <div class="p-block">
+                  <h4>结果</h4>
+                  <ul class="results">
+                    <li>开发集从 <b>66.0</b> 提升到 <b>71.0</b>，但 McNemar 检验 p≈0.30，差异不显著，因此没有设为默认。</li>
+                    <li><b>6</b> 个索引层实验以 tag 归档，<b>5</b> 个被否决的结论连同分数保留在仓库。</li>
+                    <li>运行清单记录 commit、配置哈希、Prompt 哈希与模型签名，45 题冻结集用于回归。</li>
+                  </ul>
+                </div>
+                <div class="p-block">
+                  <h4>技术栈</h4>
+                  <ul class="stack">
+                    <li>LangChain · LangGraph</li>
+                    <li>Qdrant · BM25 · RRF</li>
+                    <li>Cross Encoder</li>
+                    <li>Pydantic · pytest</li>
+                  </ul>
+                  <a class="repo-link" href="https://github.com/jubai123/Enterprise-RAG-System" target="_blank" rel="noopener noreferrer">在 GitHub 查看 <span aria-hidden="true">↗</span></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <li class="project" id="p-ec" data-project>
+          <button class="project-head" type="button" aria-expanded="false" aria-controls="body-ec">
+            <span class="p-idx">03</span>
+            <span class="p-main">
+              <span class="p-title">智能电商客服系统</span>
+              <span class="p-sub">Qwen1.5-1.8B 领域微调到 AWQ 量化，再到 vLLM 流式服务</span>
+            </span>
+            <span class="p-meta">Python · vLLM</span>
+            <span class="p-metric"><b>89.5%</b>胜率</span>
+            <span class="p-toggle" aria-hidden="true"></span>
+          </button>
+          <div class="project-body" id="body-ec" role="region" aria-label="智能电商客服系统详情">
+            <div class="project-inner">
+              <div class="p-cols">
+                <div class="p-block">
+                  <h4>问题</h4>
+                  <p>通用小模型答客服问题太长、答不全，订单类问题还需要查实时业务库。</p>
+                  <h4>做法</h4>
+                  <ul>
+                    <li>合成客服指令集做 LoRA 微调，合并权重后 AWQ 4-bit 量化，量化前后做质量与性能双维度对比。</li>
+                    <li>意图识别直连业务库，未命中时走 ChromaDB 加 BGE-M3 检索兜底，检索结果以受控格式注入上下文。</li>
+                    <li>vLLM 推理，FastAPI 提供 SSE 流式接口，Redis 存会话，Prometheus 出指标。</li>
+                  </ul>
+                </div>
+                <div class="p-block">
+                  <h4>结果</h4>
+                  <ul class="results">
+                    <li>综合得分 <b>0.4726</b> 提升到 <b>0.7481</b>，人工评审胜率 89.5%（179/200）。</li>
+                    <li>模型体积 <b>3.4 GB</b> 降到 <b>1.7 GB</b>，显存 3503 MB 降到 1791 MB，质量差落在误差范围内。</li>
+                    <li>RAG 数字忠实度下降 23.9 个点，README 里写明这是已知取舍和改进方向。</li>
+                  </ul>
+                </div>
+                <div class="p-block">
+                  <h4>技术栈</h4>
+                  <ul class="stack">
+                    <li>Transformers · PEFT</li>
+                    <li>AutoAWQ · vLLM</li>
+                    <li>ChromaDB · Redis</li>
+                    <li>FastAPI · Gradio</li>
+                  </ul>
+                  <a class="repo-link" href="https://github.com/jubai123/ecommerce-customer-service" target="_blank" rel="noopener noreferrer">在 GitHub 查看 <span aria-hidden="true">↗</span></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <li class="project" id="p-dr" data-project>
+          <button class="project-head" type="button" aria-expanded="false" aria-controls="body-dr">
+            <span class="p-idx">04</span>
+            <span class="p-main">
+              <span class="p-title">LangGraph DeepResearch</span>
+              <span class="p-sub">多 Agent 深度研究：并行搜索、反思补搜、Critic 与 Writer 辩论</span>
+            </span>
+            <span class="p-meta">Python · TypeScript</span>
+            <span class="p-metric"><b>5</b>维评审</span>
+            <span class="p-toggle" aria-hidden="true"></span>
+          </button>
+          <div class="project-body" id="body-dr" role="region" aria-label="LangGraph DeepResearch 详情">
+            <div class="project-inner">
+              <div class="p-cols">
+                <div class="p-block">
+                  <h4>问题</h4>
+                  <p>一次性检索写不出有来源、有覆盖度的研究报告，长任务还需要人确认方向。</p>
+                  <h4>做法</h4>
+                  <ul>
+                    <li>PlanNode 先做需求澄清并暂停，等用户确认研究计划后再执行。</li>
+                    <li>ResearchAgent 用 LangGraph 的 Send 机制 fan-out 并行搜索，Critique 自评信息是否充分，不足则补搜，循环有上限兜底。</li>
+                    <li>WriterAgent 走大纲、草稿、Critic 五维评审、修订的辩论循环，Critic 按严重度分级并给 0 到 10 分。</li>
+                  </ul>
+                </div>
+                <div class="p-block">
+                  <h4>结果</h4>
+                  <ul class="results">
+                    <li>报告带引用来源，检索与写作进度通过 SSE 实时回传到前端时间线。</li>
+                    <li>令牌桶限流加 429 指数退避，控制搜索 API 的调用节奏。</li>
+                    <li>前后端分离：LangGraph Server 加 React 18 与 Vite 前端。</li>
+                  </ul>
+                </div>
+                <div class="p-block">
+                  <h4>技术栈</h4>
+                  <ul class="stack">
+                    <li>LangGraph · FastAPI</li>
+                    <li>React · TypeScript</li>
+                    <li>Vite · shadcn/ui</li>
+                    <li>SSE · 百炼 MCP</li>
+                  </ul>
+                  <a class="repo-link" href="https://github.com/jubai123/LangGraph-DeepResearch" target="_blank" rel="noopener noreferrer">在 GitHub 查看 <span aria-hidden="true">↗</span></a>
+                </div>
+              </div>
+              <figure class="p-shot">
+                <img src="assets/img/deepresearch-app.webp" width="872" height="632" alt="LangGraph DeepResearch 运行界面，展示计划确认摘要与需求清晰度进度条" decoding="async">
+                <figcaption>运行界面：计划阶段暂停等待确认，下方实时显示需求清晰度</figcaption>
+              </figure>
+            </div>
+          </div>
+        </li>
+
+        <li class="project" id="p-ocr" data-project>
+          <button class="project-head" type="button" aria-expanded="false" aria-controls="body-ocr">
+            <span class="p-idx">05</span>
+            <span class="p-main">
+              <span class="p-title">发票识别与自动化</span>
+              <span class="p-sub">PaddleOCR 加 LLM 做字段提取，用置信度决定谁来拍板</span>
+            </span>
+            <span class="p-meta">Python · PaddleOCR</span>
+            <span class="p-metric"><b>3</b>级路由</span>
+            <span class="p-toggle" aria-hidden="true"></span>
+          </button>
+          <div class="project-body" id="body-ocr" role="region" aria-label="发票识别与自动化详情">
+            <div class="project-inner">
+              <div class="p-cols">
+                <div class="p-block">
+                  <h4>问题</h4>
+                  <p>发票版式杂、字段多，纯正则撑不住，全部交给模型又无法评估可信度。</p>
+                  <h4>做法</h4>
+                  <ul>
+                    <li>正则、版面坐标、LLM 三级提取，LLM 只补规则缺失的字段，不覆盖高置信结果。</li>
+                    <li>字段级置信度等于来源权重乘 OCR 分数，金额、税额这类金融字段加权。</li>
+                    <li>数量乘单价等于金额的公式校验与自动修复，处理拼接、拆分的异常明细。</li>
+                  </ul>
+                </div>
+                <div class="p-block">
+                  <h4>结果</h4>
+                  <ul class="results">
+                    <li>高于 <b>0.70</b> 直接接受，0.50 到 0.70 交 LLM 复核，低于 <b>0.50</b> 标记人工审核。</li>
+                    <li>Flask 界面、FastAPI 接口、CLI 三个入口，Docker 同时支持 CPU 与 GPU 镜像。</li>
+                    <li>识别结果可一键导出 Excel，按归属人汇总张数与平均置信度。</li>
+                  </ul>
+                </div>
+                <div class="p-block">
+                  <h4>技术栈</h4>
+                  <ul class="stack">
+                    <li>PaddleOCR · PP-Structure</li>
+                    <li>Flask · FastAPI</li>
+                    <li>Docker · pytest</li>
+                    <li>NVIDIA NIM</li>
+                  </ul>
+                  <a class="repo-link" href="https://github.com/jubai123/invoice-ocr-automation" target="_blank" rel="noopener noreferrer">在 GitHub 查看 <span aria-hidden="true">↗</span></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="section" id="method">
+    <div class="wrap">
+      <header class="section-head">
+        <h2 data-reveal>方法</h2>
+        <p class="lead" data-reveal style="--d:.05s">
+          同一个问题在五个仓库里反复出现：怎么让模型输出可信、可查、可回退。下面是我现在的默认做法。
+        </p>
+      </header>
+
+      <div class="methods">
+        <div class="method-row" data-reveal>
+          <div class="m-key">检索</div>
+          <p class="m-desc">Dense 与 BM25 双通道召回，RRF 融合，Cross Encoder 重排，父块展开控制喂给模型的上下文宽度。</p>
+          <div class="m-src">Enterprise RAG</div>
+        </div>
+        <div class="method-row" data-reveal>
+          <div class="m-key">生成</div>
+          <p class="m-desc">受约束生成加反捏造契约：Prompt 侧校验格式，输出侧核对检索结果里的标识符，宁可拒答。</p>
+          <div class="m-src">Enterprise RAG</div>
+        </div>
+        <div class="method-row" data-reveal>
+          <div class="m-key">编排</div>
+          <p class="m-desc">LangGraph 强类型状态机，节点职责单一，人工审批门与检查点恢复写在架构里，不做事后补丁。</p>
+          <div class="m-src">ERP Copilot · DeepResearch</div>
+        </div>
+        <div class="method-row" data-reveal>
+          <div class="m-key">模型</div>
+          <p class="m-desc">LoRA 领域微调、权重合并、AWQ 4-bit 量化，质量和显存两个维度都留对比数据。</p>
+          <div class="m-src">电商客服</div>
+        </div>
+        <div class="method-row" data-reveal>
+          <div class="m-key">服务</div>
+          <p class="m-desc">vLLM 推理、SSE 流式、Redis 会话、滑动窗口限流与 Prometheus 指标，按生产环境配。</p>
+          <div class="m-src">电商客服</div>
+        </div>
+        <div class="method-row" data-reveal>
+          <div class="m-key">评测</div>
+          <p class="m-desc">冻结集回归，A/B 对照，显著性判断后才改默认值，运行清单记录到模型与数据签名。</p>
+          <div class="m-src">全部仓库</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="case">
+    <div class="wrap">
+      <header class="section-head">
+        <h2 data-reveal>被否决的结论，也是交付物</h2>
+        <p class="lead" data-reveal style="--d:.05s">
+          在 Enterprise RAG 里，六个索引层实验只有一个留在主线，其余五个以 tag 保存，连同分数和否决理由。
+        </p>
+      </header>
+
+      <p class="statement" data-reveal>
+        71.0 比 66.0 高 5 分，但 McNemar 检验 p≈<span class="accent">0.30</span>，差异落在噪声里，所以它没有成为默认配置。
+      </p>
+
+      <div class="table-scroll" data-reveal>
+        <table class="layers">
+          <caption class="sr-only">Enterprise RAG 六个索引层实验的结论</caption>
+          <thead>
+            <tr>
+              <th scope="col">索引层</th>
+              <th scope="col">切块 / 向量</th>
+              <th scope="col" class="num">开发集分数</th>
+              <th scope="col">结论</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>old 语料层</td>
+              <td>旧切块 / Qwen3-0.6B</td>
+              <td class="num">59.0 → 62.0 → 63.0</td>
+              <td><span class="tag tag--in">采纳</span></td>
+            </tr>
+            <tr>
+              <td>v2 结构恢复切块</td>
+              <td>结构恢复 / Qwen3-0.6B</td>
+              <td class="num">56.0</td>
+              <td><span class="tag">否决</span></td>
+            </tr>
+            <tr>
+              <td>v3 叶粒度切块</td>
+              <td>叶粒度 / Qwen3-0.6B</td>
+              <td class="num">55.0</td>
+              <td><span class="tag">否决</span></td>
+            </tr>
+            <tr>
+              <td>v3 + 8B 向量</td>
+              <td>叶粒度 / Qwen3-8B</td>
+              <td class="num">58.0</td>
+              <td><span class="tag">否决</span></td>
+            </tr>
+            <tr>
+              <td>old 切块 + bge-m3</td>
+              <td>旧切块 / bge-m3</td>
+              <td class="num">58.0</td>
+              <td><span class="tag">否决</span></td>
+            </tr>
+            <tr>
+              <td>v3ov 叶粒度 + 邻接窗</td>
+              <td>叶粒度 + 邻接窗 / Qwen3-8B</td>
+              <td class="num">65.0</td>
+              <td><span class="tag">否决</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="case-notes">
+        <div data-reveal>
+          <h3>为什么留着</h3>
+          <p>被否决的层会显式钉死检索预算，避免主配置改默认值后历史分数再也复现不出来。结论本身比代码活得更久。</p>
+        </div>
+        <div data-reveal style="--d:.06s">
+          <h3>怎么验证</h3>
+          <p>每次评测写入结果摘要与运行清单，记录 commit、配置哈希、Prompt 哈希、模型 tree hash，任何人可以按清单重跑。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="about">
+    <div class="wrap">
+      <div class="about-grid">
+        <div class="about-copy">
+          <h2 data-reveal>关于</h2>
+          <p data-reveal style="--d:.05s">
+            我是白敬俊，做 AI 应用工程。这段时间的精力主要花在一件事上：把模型能力变成能交付的系统。检索怎么召回，Agent 怎么受控，推理成本怎么降，结论怎么验证。
+          </p>
+          <p data-reveal style="--d:.1s">
+            所以这些仓库里既有能跑通的链路，也有被数据推翻的方案。评测数字、失败原因和复现方式都写在仓库里，没有藏起来的部分。
+          </p>
+          <p class="about-sign" data-reveal style="--d:.15s">白敬俊 / Jingjun Bai</p>
+        </div>
+        <dl class="facts" data-reveal style="--d:.08s">
+          <div><dt>方向</dt><dd>检索增强 · Agent 编排 · 推理部署</dd></div>
+          <div><dt>公开仓库</dt><dd><a class="link" href="https://github.com/jubai123?tab=repositories" target="_blank" rel="noopener noreferrer">5 个，全部开源</a></dd></div>
+          <div><dt>邮箱</dt><dd><a class="link" href="mailto:baijingjun@stu.xjtu.edu.cn">baijingjun@stu.xjtu.edu.cn</a></dd></div>
+          <div><dt>所在地</dt><dd>中国</dd></div>
+          <div><dt>GitHub</dt><dd><a class="link" href="https://github.com/jubai123" target="_blank" rel="noopener noreferrer">@jubai123</a></dd></div>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <section class="section contact" id="contact">
+    <div class="wrap">
+      <h2 data-reveal>有岗位或项目想聊</h2>
+      <p class="contact-lead" data-reveal style="--d:.05s">
+        在找做 RAG、Agent 或推理服务的工程师，或者只是想聊聊评测方法，都欢迎来信。
+      </p>
+      <a class="mail" href="mailto:baijingjun@stu.xjtu.edu.cn" data-reveal style="--d:.1s">
+        baijingjun@stu.xjtu.edu.cn
+      </a>
+      <div class="contact-links" data-reveal style="--d:.15s">
+        <a class="link" href="https://github.com/jubai123" target="_blank" rel="noopener noreferrer">github.com/jubai123 <span aria-hidden="true">↗</span></a>
+        <span class="contact-note">邮件优先</span>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="wrap footer-inner">
+    <p>本页只展示 GitHub 公开仓库。数据取自 GitHub API，更新于 2026 年 11 月 25 日。</p>
+    <p>© <span id="year">2026</span> 白敬俊 · 静态站点，无追踪</p>
+  </div>
+</footer>
+
+<script src="assets/js/main.js" defer></script>
+</body>
+</html>
